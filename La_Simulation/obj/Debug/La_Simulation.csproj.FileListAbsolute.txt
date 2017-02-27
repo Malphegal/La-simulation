@@ -1,0 +1,20 @@
+C:\Users\Anacin\Desktop\Logiciel inf\La_Simulation\La_Simulation\bin\Debug\La_Simulation.exe.config
+C:\Users\Anacin\Desktop\Logiciel inf\La_Simulation\La_Simulation\bin\Debug\La_Simulation.exe
+C:\Users\Anacin\Desktop\Logiciel inf\La_Simulation\La_Simulation\bin\Debug\La_Simulation.pdb
+C:\Users\Anacin\Desktop\Logiciel inf\La_Simulation\La_Simulation\obj\Debug\La_Simulation.csprojResolveAssemblyReference.cache
+C:\Users\Anacin\Desktop\Logiciel inf\La_Simulation\La_Simulation\obj\Debug\La_Simulation.Form1.resources
+C:\Users\Anacin\Desktop\Logiciel inf\La_Simulation\La_Simulation\obj\Debug\La_Simulation.Properties.Resources.resources
+C:\Users\Anacin\Desktop\Logiciel inf\La_Simulation\La_Simulation\obj\Debug\La_Simulation.csproj.GenerateResource.Cache
+C:\Users\Anacin\Desktop\Logiciel inf\La_Simulation\La_Simulation\obj\Debug\La_Simulation.exe
+C:\Users\Anacin\Desktop\Logiciel inf\La_Simulation\La_Simulation\obj\Debug\La_Simulation.pdb
+C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\bin\Debug\La_Simulation.exe.config
+C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\obj\Debug\La_Simulation.exe
+C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\obj\Debug\La_Simulation.pdb
+C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\bin\Debug\La_Simulation.exe
+C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\bin\Debug\La_Simulation.pdb
+C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\obj\Debug\La_Simulation.csprojResolveAssemblyReference.cache
+C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\obj\Debug\La_Simulation.Properties.Resources.resources
+C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\obj\Debug\La_Simulation.csproj.GenerateResource.Cache
+C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\obj\Debug\La_Simulation.frmPrincipal.resources
+C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\obj\Debug\La_Simulation.frmAjouterPersonne.resources
+C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\obj\Debug\La_Simulation.frmListePersonne.resources

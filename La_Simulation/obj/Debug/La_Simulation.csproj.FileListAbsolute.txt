@@ -18,3 +18,14 @@ C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\obj\Debug\La_Simulation.cspr
 C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\obj\Debug\La_Simulation.frmPrincipal.resources
 C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\obj\Debug\La_Simulation.frmAjouterPersonne.resources
 C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\obj\Debug\La_Simulation.frmListePersonne.resources
+C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\bin\Debug\La_Simulation.exe.config
+C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\obj\Debug\La_Simulation.exe
+C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\obj\Debug\La_Simulation.pdb
+C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\bin\Debug\La_Simulation.exe
+C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\bin\Debug\La_Simulation.pdb
+C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\obj\Debug\La_Simulation.csprojResolveAssemblyReference.cache
+C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\obj\Debug\La_Simulation.frmPrincipal.resources
+C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\obj\Debug\La_Simulation.frmAjouterPersonne.resources
+C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\obj\Debug\La_Simulation.frmListePersonne.resources
+C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\obj\Debug\La_Simulation.Properties.Resources.resources
+C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\obj\Debug\La_Simulation.csproj.GenerateResource.Cache

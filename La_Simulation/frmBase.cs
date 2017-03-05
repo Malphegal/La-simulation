@@ -14,17 +14,27 @@ namespace La_Simulation
 {
     public partial class frmPrincipal : Form
     {
+            // Variables globales
+
+        OleDbConnection connec = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\BaseDeDonnée\bdLaSimulation.mdb");
+        OleDbCommand cmd;
+
+            // Constructeurs
+
         public frmPrincipal() // Constructeur
         {
             InitializeComponent();
         }
 
+            // --------------------------
+            // Méthodes évenementielles
+            // --------------------------
+
         private void Form1_Load(object sender, EventArgs e) // Charge la classe Personne de toutes les Personnes
         {
                 // Initialiser la variable static listPersonne
 
-            OleDbConnection connec = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\BaseDeDonnée\bdLaSimulation.mdb");
-            OleDbCommand cmd = new OleDbCommand("SELECT * FROM Personne", connec);
+            cmd = new OleDbCommand("SELECT * FROM Personne", connec);
 
             connec.Open();
 
@@ -57,8 +67,7 @@ namespace La_Simulation
 
         private void btnListerToutLeMonde_Click(object sender, EventArgs e) // Liste toutes les Personnes dans des MessageBox.Show
         {
-            OleDbConnection connec = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\BaseDeDonnée\bdLaSimulation.mdb");
-            OleDbCommand cmd = new OleDbCommand("SELECT * FROM Personne", connec);
+            cmd = new OleDbCommand("SELECT * FROM Personne", connec);
 
             connec.Open();
 
@@ -66,7 +75,7 @@ namespace La_Simulation
 
             while(dr.Read())
                 MessageBox.Show("[" + dr.GetValue(0).ToString() + "] " + dr.GetValue(1).ToString() + " " + dr.GetValue(2).ToString() +
-                    "(" + dr.GetValue(3).ToString() + ") " + dr.GetValue(4).ToString());
+                    "(" + dr.GetValue(3).ToString() + ") " + dr.GetValue(4).ToString() + (int.Parse(dr.GetValue(4).ToString()) > 1 ? " ans" : " an"));
 
             connec.Close();
         }
@@ -80,16 +89,15 @@ namespace La_Simulation
         {
             if (new frmListePersonne().ShowDialog() == DialogResult.OK)
             {
-                OleDbConnection connec = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\BaseDeDonnée\bdLaSimulation.mdb");
-                OleDbCommand cmd = new OleDbCommand("DELETE FROM Personne WHERE id = " + frmListePersonne.idASupprimer, connec);
+                cmd = new OleDbCommand("DELETE FROM Personne WHERE id = " + frmListePersonne.idASupprimer, connec);
 
                 connec.Open();
 
                 OleDbDataReader dr = cmd.ExecuteReader();
+                Personne.nextIdMoinsUn(); // Retirer 1 à la valeur nextId de Personne
 
                 connec.Close();
 
-                connec = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\BaseDeDonnée\bdLaSimulation.mdb");
                 cmd = new OleDbCommand("UPDATE Personne SET id = id - 1 WHERE id > " + frmListePersonne.idASupprimer, connec);
 
                 connec.Open();

@@ -14,7 +14,14 @@ namespace La_Simulation
 {
     public partial class frmAjouterPersonne : Form
     {
-        public frmAjouterPersonne()
+            // Variables globales
+
+        OleDbConnection connec = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\BaseDeDonnée\bdLaSimulation.mdb");
+        OleDbCommand cmd;
+
+            // Constructeurs
+
+        public frmAjouterPersonne() // Constructeur
         {
             InitializeComponent();
         }
@@ -54,8 +61,7 @@ namespace La_Simulation
                 
                     // Ajouter la Personne dans la table Personne
 
-                OleDbConnection connec = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\BaseDeDonnée\bdLaSimulation.mdb");
-                OleDbCommand cmd = new OleDbCommand("INSERT INTO Personne VALUES (@ID, @NOM, @PRENOM, @SEXE, @AGE)", connec);
+                cmd = new OleDbCommand("INSERT INTO Personne VALUES (@ID, @NOM, @PRENOM, @SEXE, @AGE)", connec);
 
                 connec.Open();
 

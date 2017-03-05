@@ -26,20 +26,19 @@ namespace La_Simulation.Classes
             // Constructeurs et création de Personne
             // --------------------------
 
-        public static ushort ajouterUnePersonne(string nom, string prenom, byte age) // Méthode public, pour la création d'une Personne
+        public static void ajouterUnePersonne(string nom, string prenom, byte age) // Méthode public, pour la création d'une Personne
         {
             if (string.IsNullOrWhiteSpace(nom) || string.IsNullOrWhiteSpace(prenom)) // Verif à faire à l'appel de la méthode ? -----
                 throw new ArgumentException();
             listPersonne.Add(new Personne(nom, prenom, age));
-            return listPersonne.Last().age;
         }
 
-        protected Personne(string nom, string prenom, byte age) // Constructeur protected, pour l'héritage
+        protected Personne(string Pnom, string Pprenom, byte Page) // Constructeur protected, pour l'héritage
         {
             id = getNextId();
-            this.nom = nom;
-            this.prenom = prenom;
-            this.age = age;
+            nom = Pnom;
+            prenom = Pprenom;
+            age = Page;
         }
 
             // --------------------------
@@ -51,9 +50,14 @@ namespace La_Simulation.Classes
             return nextId++;
         }
 
+        public static void nextIdMoinsUn()
+        {
+            nextId--;
+        }
+
         public virtual string sePresenter() // Renvoie un string de présentation de this
         {
-            return "Je suis " + nom + ' ' + prenom + " et j'ai " + age + " ans.";
+            return "Je suis " + nom + ' ' + prenom + " et j'ai " + age + (int.Parse(age.ToString()) > 1 ? " ans." : " an.");
         }
 
         public static IEnumerable<string> listerPersonnes() // Renvoie chaque string sePresenter de chaque Personne

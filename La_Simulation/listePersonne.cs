@@ -13,15 +13,26 @@ namespace La_Simulation
 {
     public partial class frmListePersonne : Form
     {
-        public frmListePersonne() 
+            // Variables globales
+
+        OleDbConnection connec = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\BaseDeDonnée\bdLaSimulation.mdb");
+        OleDbCommand cmd;
+        static public int idASupprimer { get; private set; }
+
+            // Constructeur
+
+        public frmListePersonne() // Constructeur
         {
             InitializeComponent();
-        } // Constructeur
+        }
+
+            // --------------------------
+            // Méthodes évenementielles
+            // --------------------------
 
         private void listePersonne_Load(object sender, EventArgs e)
         {
-            OleDbConnection connec = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Anacin\Desktop\La_Simulation\La_Simulation\BaseDeDonnée\bdLaSimulation.mdb");
-            OleDbCommand cmd = new OleDbCommand("SELECT * FROM Personne", connec);
+            cmd = new OleDbCommand("SELECT * FROM Personne", connec);
 
             connec.Open();
 
@@ -29,7 +40,7 @@ namespace La_Simulation
 
             while (dr.Read())
                 cboListePersonne.Items.Add("[" + dr.GetValue(0).ToString() + "] " + dr.GetValue(1).ToString() + " " + dr.GetValue(2).ToString() +
-                    "(" + dr.GetValue(3).ToString() + ") " + dr.GetValue(4).ToString() + " an" + (int.Parse(dr.GetValue(0).ToString()) > 1 ? "s" : ""));
+                    "(" + dr.GetValue(3).ToString() + ") " + dr.GetValue(4).ToString() + (int.Parse(dr.GetValue(4).ToString()) > 1 ? " ans" : " an"));
 
             connec.Close();
         } // Remplir cboListePersonne avec toutes les Personnes
@@ -37,18 +48,15 @@ namespace La_Simulation
         private void btnQuitter_Click(object sender, EventArgs e) // Ferme le formulaire de choix de Personne
         {
             Close();
-        }
-
-        static private int id;
-        static public int idASupprimer { get { return id; } }
+        }        
 
         private void btnValider_Click(object sender, EventArgs e)
         {
             if (cboListePersonne.SelectedIndex != -1)
             {
-                if (MessageBox.Show("Voulez-vous vraiment supprimer de la base de donnée\n" + cboListePersonne.SelectedItem + " ?", "Confirmer la suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Voulez-vous vraiment supprimer de la base de donnée :\n" + cboListePersonne.SelectedItem + " ?", "Confirmer la suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    id = cboListePersonne.SelectedIndex;
+                    idASupprimer = cboListePersonne.SelectedIndex;
                     DialogResult = DialogResult.OK;
                 }
             }

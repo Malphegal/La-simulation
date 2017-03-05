@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Personne.cs" />
+    <Compile Include="Classes\Planete.cs" />
     <Compile Include="frmBase.cs">
       <SubType>Form</SubType>
     </Compile>

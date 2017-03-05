@@ -1,6 +1,6 @@
 ﻿namespace La_Simulation
 {
-    partial class frmAjouterPersonne
+    partial class frmAjouterEntite
     {
         /// <summary>
         /// Required designer variable.
@@ -143,7 +143,7 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // frmAjouterPersonne
+            // frmAjouterEntite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -160,8 +160,8 @@
             this.Controls.Add(this.btnAjouter);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmAjouterPersonne";
-            this.Text = "Ajouter une personne";
+            this.Name = "frmAjouterEntite";
+            this.Text = "Ajouter : [...]";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

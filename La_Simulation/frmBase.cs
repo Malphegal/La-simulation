@@ -58,7 +58,7 @@ namespace La_Simulation
 
         private void btnAjouterPersonne_Click(object sender, EventArgs e) // Ajouter une Personne dans la base de donnée
         {
-            if (new frmAjouterPersonne().ShowDialog() == DialogResult.OK)
+            if (new frmAjouterEntite("Personne").ShowDialog() == DialogResult.OK)
             {
                 lblNombrePersonne.Tag = int.Parse(lblNombrePersonne.Tag.ToString()) + 1; // Faire une fonction de mise à jour
                 lblNombrePersonne.Text = "Nombre de personnes : " + lblNombrePersonne.Tag.ToString(); // Faire une fonction de mise à jour
@@ -67,17 +67,8 @@ namespace La_Simulation
 
         private void btnListerToutLeMonde_Click(object sender, EventArgs e) // Liste toutes les Personnes dans des MessageBox.Show
         {
-            cmd = new OleDbCommand("SELECT * FROM Personne", connec);
-
-            connec.Open();
-
-            OleDbDataReader dr = cmd.ExecuteReader();
-
-            while(dr.Read())
-                MessageBox.Show("[" + dr.GetValue(0).ToString() + "] " + dr.GetValue(1).ToString() + " " + dr.GetValue(2).ToString() +
-                    "(" + dr.GetValue(3).ToString() + ") " + dr.GetValue(4).ToString() + (int.Parse(dr.GetValue(4).ToString()) > 1 ? " ans" : " an"));
-
-            connec.Close();
+            foreach(string p in Personne.listerPersonnes())
+                MessageBox.Show(p);
         }
 
         private void btnQuitter_Click(object sender, EventArgs e) // Quitte l'application
@@ -108,6 +99,15 @@ namespace La_Simulation
 
                 lblNombrePersonne.Tag = int.Parse(lblNombrePersonne.Tag.ToString()) - 1; // Faire une fonction de mise à jour
                 lblNombrePersonne.Text = "Nombre de personnes : " + lblNombrePersonne.Tag.ToString(); // Faire une fonction de mise à jour
+            }
+        } // /!\ Mise à jour à faire
+
+        private void btnAjouterPlanete_Click(object sender, EventArgs e) // Ajouter une Planete dans la base de donnée
+        {
+            if (new frmAjouterEntite("Planète").ShowDialog() == DialogResult.OK)
+            {
+                lblNombrePlanete.Tag = int.Parse(lblNombrePlanete.Tag.ToString()) + 1; // Faire une fonction de mise à jour
+                lblNombrePlanete.Text = "Nombre de planètes : " + lblNombrePlanete.Tag.ToString(); // Faire une fonction de mise à jour
             }
         } // /!\ Mise à jour à faire
     }

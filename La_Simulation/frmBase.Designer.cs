@@ -33,6 +33,8 @@
             this.btnListerToutLeMonde = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnSupprimerPersonne = new System.Windows.Forms.Button();
+            this.btnAjouterPlanete = new System.Windows.Forms.Button();
+            this.lblNombrePlanete = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNombrePersonne
@@ -86,11 +88,32 @@
             this.btnSupprimerPersonne.UseVisualStyleBackColor = true;
             this.btnSupprimerPersonne.Click += new System.EventHandler(this.btnSupprimerPersonne_Click);
             // 
+            // btnAjouterPlanete
+            // 
+            this.btnAjouterPlanete.Location = new System.Drawing.Point(30, 66);
+            this.btnAjouterPlanete.Name = "btnAjouterPlanete";
+            this.btnAjouterPlanete.Size = new System.Drawing.Size(200, 36);
+            this.btnAjouterPlanete.TabIndex = 4;
+            this.btnAjouterPlanete.Text = "Ajouter une planète...";
+            this.btnAjouterPlanete.UseVisualStyleBackColor = true;
+            this.btnAjouterPlanete.Click += new System.EventHandler(this.btnAjouterPlanete_Click);
+            // 
+            // lblNombrePlanete
+            // 
+            this.lblNombrePlanete.AutoSize = true;
+            this.lblNombrePlanete.Location = new System.Drawing.Point(46, 31);
+            this.lblNombrePlanete.Name = "lblNombrePlanete";
+            this.lblNombrePlanete.Size = new System.Drawing.Size(161, 18);
+            this.lblNombrePlanete.TabIndex = 5;
+            this.lblNombrePlanete.Text = "Nombre de planètes : 0";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 485);
+            this.Controls.Add(this.lblNombrePlanete);
+            this.Controls.Add(this.btnAjouterPlanete);
             this.Controls.Add(this.btnSupprimerPersonne);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnListerToutLeMonde);
@@ -113,6 +136,8 @@
         private System.Windows.Forms.Button btnListerToutLeMonde;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Button btnSupprimerPersonne;
+        private System.Windows.Forms.Button btnAjouterPlanete;
+        private System.Windows.Forms.Label lblNombrePlanete;
     }
 }
 

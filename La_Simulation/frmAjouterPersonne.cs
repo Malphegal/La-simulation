@@ -12,7 +12,7 @@ using System.Data.OleDb;
 
 namespace La_Simulation
 {
-    public partial class frmAjouterPersonne : Form
+    public partial class frmAjouterEntite : Form
     {
             // Variables globales
 
@@ -21,9 +21,10 @@ namespace La_Simulation
 
             // Constructeurs
 
-        public frmAjouterPersonne() // Constructeur
+        public frmAjouterEntite(string entiteAAjouter) // Constructeur
         {
             InitializeComponent();
+            Text = "Ajouter : " + entiteAAjouter;
         }
 
             // --------------------------
@@ -105,7 +106,7 @@ namespace La_Simulation
 
         private void btnQuitter_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult = DialogResult.Abort;
         }
     }
 }

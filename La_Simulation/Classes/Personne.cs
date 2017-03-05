@@ -50,7 +50,7 @@ namespace La_Simulation.Classes
             return nextId++;
         }
 
-        public static void nextIdMoinsUn()
+        public static void nextIdMoinsUn() // Baisser de un le prochain id à utiliser (suppression d'une Personne)
         {
             nextId--;
         }
@@ -73,7 +73,7 @@ namespace La_Simulation.Classes
             return listPersonne[id];
         }
 
-        public static Personne[] getAllPersonnes()
+        public static Personne[] getAllPersonnes() // Renvoie un tableau de toutes les Personnes
         {
             return listPersonne.ToArray();
         }

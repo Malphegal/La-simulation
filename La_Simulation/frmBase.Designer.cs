@@ -35,12 +35,13 @@
             this.btnSupprimerPersonne = new System.Windows.Forms.Button();
             this.btnAjouterPlanete = new System.Windows.Forms.Button();
             this.lblNombrePlanete = new System.Windows.Forms.Label();
+            this.lblTitre = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNombrePersonne
             // 
             this.lblNombrePersonne.AutoSize = true;
-            this.lblNombrePersonne.Location = new System.Drawing.Point(494, 31);
+            this.lblNombrePersonne.Location = new System.Drawing.Point(496, 151);
             this.lblNombrePersonne.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombrePersonne.Name = "lblNombrePersonne";
             this.lblNombrePersonne.Size = new System.Drawing.Size(176, 18);
@@ -50,7 +51,7 @@
             // 
             // btnAjouterPersonne
             // 
-            this.btnAjouterPersonne.Location = new System.Drawing.Point(481, 66);
+            this.btnAjouterPersonne.Location = new System.Drawing.Point(483, 186);
             this.btnAjouterPersonne.Name = "btnAjouterPersonne";
             this.btnAjouterPersonne.Size = new System.Drawing.Size(201, 36);
             this.btnAjouterPersonne.TabIndex = 0;
@@ -60,7 +61,7 @@
             // 
             // btnListerToutLeMonde
             // 
-            this.btnListerToutLeMonde.Location = new System.Drawing.Point(516, 199);
+            this.btnListerToutLeMonde.Location = new System.Drawing.Point(483, 267);
             this.btnListerToutLeMonde.Name = "btnListerToutLeMonde";
             this.btnListerToutLeMonde.Size = new System.Drawing.Size(131, 48);
             this.btnListerToutLeMonde.TabIndex = 2;
@@ -70,9 +71,10 @@
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(548, 434);
+            this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitter.Location = new System.Drawing.Point(540, 438);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(155, 39);
+            this.btnQuitter.Size = new System.Drawing.Size(163, 35);
             this.btnQuitter.TabIndex = 3;
             this.btnQuitter.Text = "Quitter l\'application...";
             this.btnQuitter.UseVisualStyleBackColor = true;
@@ -80,7 +82,7 @@
             // 
             // btnSupprimerPersonne
             // 
-            this.btnSupprimerPersonne.Location = new System.Drawing.Point(481, 105);
+            this.btnSupprimerPersonne.Location = new System.Drawing.Point(483, 225);
             this.btnSupprimerPersonne.Name = "btnSupprimerPersonne";
             this.btnSupprimerPersonne.Size = new System.Drawing.Size(200, 36);
             this.btnSupprimerPersonne.TabIndex = 1;
@@ -90,7 +92,7 @@
             // 
             // btnAjouterPlanete
             // 
-            this.btnAjouterPlanete.Location = new System.Drawing.Point(30, 66);
+            this.btnAjouterPlanete.Location = new System.Drawing.Point(35, 186);
             this.btnAjouterPlanete.Name = "btnAjouterPlanete";
             this.btnAjouterPlanete.Size = new System.Drawing.Size(200, 36);
             this.btnAjouterPlanete.TabIndex = 4;
@@ -101,17 +103,28 @@
             // lblNombrePlanete
             // 
             this.lblNombrePlanete.AutoSize = true;
-            this.lblNombrePlanete.Location = new System.Drawing.Point(46, 31);
+            this.lblNombrePlanete.Location = new System.Drawing.Point(52, 151);
             this.lblNombrePlanete.Name = "lblNombrePlanete";
             this.lblNombrePlanete.Size = new System.Drawing.Size(161, 18);
             this.lblNombrePlanete.TabIndex = 5;
             this.lblNombrePlanete.Text = "Nombre de planètes : 0";
+            // 
+            // lblTitre
+            // 
+            this.lblTitre.AutoSize = true;
+            this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitre.Location = new System.Drawing.Point(187, 27);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(369, 58);
+            this.lblTitre.TabIndex = 6;
+            this.lblTitre.Text = "            La simulation :\r\nProjet jeu sous Windows Form";
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 485);
+            this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.lblNombrePlanete);
             this.Controls.Add(this.btnAjouterPlanete);
             this.Controls.Add(this.btnSupprimerPersonne);
@@ -138,6 +151,7 @@
         private System.Windows.Forms.Button btnSupprimerPersonne;
         private System.Windows.Forms.Button btnAjouterPlanete;
         private System.Windows.Forms.Label lblNombrePlanete;
+        private System.Windows.Forms.Label lblTitre;
     }
 }
 

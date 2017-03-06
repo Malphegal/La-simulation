@@ -36,6 +36,7 @@
             this.btnAjouterPlanete = new System.Windows.Forms.Button();
             this.lblNombrePlanete = new System.Windows.Forms.Label();
             this.lblTitre = new System.Windows.Forms.Label();
+            this.btnListerToutesLesPlanetes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNombrePersonne
@@ -119,6 +120,16 @@
             this.lblTitre.TabIndex = 6;
             this.lblTitre.Text = "            La simulation :\r\nProjet jeu sous Windows Form";
             // 
+            // btnListerToutesLesPlanetes
+            // 
+            this.btnListerToutesLesPlanetes.Location = new System.Drawing.Point(35, 267);
+            this.btnListerToutesLesPlanetes.Name = "btnListerToutesLesPlanetes";
+            this.btnListerToutesLesPlanetes.Size = new System.Drawing.Size(131, 48);
+            this.btnListerToutesLesPlanetes.TabIndex = 2;
+            this.btnListerToutesLesPlanetes.Text = "Lister toutes les Planètes...";
+            this.btnListerToutesLesPlanetes.UseVisualStyleBackColor = true;
+            this.btnListerToutesLesPlanetes.Click += new System.EventHandler(this.btnListerToutesLesPlanetes_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -129,6 +140,7 @@
             this.Controls.Add(this.btnAjouterPlanete);
             this.Controls.Add(this.btnSupprimerPersonne);
             this.Controls.Add(this.btnQuitter);
+            this.Controls.Add(this.btnListerToutesLesPlanetes);
             this.Controls.Add(this.btnListerToutLeMonde);
             this.Controls.Add(this.btnAjouterPersonne);
             this.Controls.Add(this.lblNombrePersonne);
@@ -152,6 +164,7 @@
         private System.Windows.Forms.Button btnAjouterPlanete;
         private System.Windows.Forms.Label lblNombrePlanete;
         private System.Windows.Forms.Label lblTitre;
+        private System.Windows.Forms.Button btnListerToutesLesPlanetes;
     }
 }
 

@@ -60,6 +60,5 @@ namespace La_Simulation.Classes
             foreach (Planete p in listPlanete)
                 yield return p.sePresenter();
         }
-
     }
 }

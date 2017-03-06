@@ -71,6 +71,12 @@ namespace La_Simulation
                 MessageBox.Show(p);
         }
 
+        private void btnListerToutesLesPlanetes_Click(object sender, EventArgs e) // Liste toutes les Planètes dans des MessageBox.Show
+        {
+            foreach (string p in Planete.listerPlanetes())
+                MessageBox.Show(p);
+        }
+
         private void btnQuitter_Click(object sender, EventArgs e) // Quitte l'application
         {
             Application.Exit();

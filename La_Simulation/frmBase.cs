@@ -56,7 +56,7 @@ namespace La_Simulation
 
         private void btnAjouterPersonne_Click(object sender, EventArgs e) // Ajouter une Personne dans la base de donnée
         {
-            if (new frmAjouterEntite("Personne").ShowDialog() == DialogResult.OK)
+            if (new frmAjouterPersonne("Personne").ShowDialog() == DialogResult.OK)
             {
                     lblNombrePersonne.Tag = int.Parse(lblNombrePersonne.Tag.ToString()) + 1; // Faire une fonction de mise à jour
                     lblNombrePersonne.Text = "Nombre de personnes : " + lblNombrePersonne.Tag.ToString(); // Faire une fonction de mise à jour
@@ -112,7 +112,7 @@ namespace La_Simulation
 
         private void btnAjouterPlanete_Click(object sender, EventArgs e) // Ajouter une Planete dans la base de donnée
         {
-            if (new frmAjouterEntite("Planète").ShowDialog() == DialogResult.OK)
+            if (new frmAjouterPersonne("Planète").ShowDialog() == DialogResult.OK)
             {
                 lblNombrePlanete.Tag = int.Parse(lblNombrePlanete.Tag.ToString()) + 1; // Faire une fonction de mise à jour
                 lblNombrePlanete.Text = "Nombre de planètes : " + lblNombrePlanete.Tag.ToString(); // Faire une fonction de mise à jour

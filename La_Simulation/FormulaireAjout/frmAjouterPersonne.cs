@@ -12,7 +12,7 @@ using System.Data.OleDb;
 
 namespace La_Simulation
 {
-    public partial class frmAjouterEntite : Form
+    public partial class frmAjouterPersonne : Form
     {
             // Variables globales
 
@@ -20,7 +20,7 @@ namespace La_Simulation
 
             // Constructeurs
 
-        public frmAjouterEntite(string entiteAAjouter) // Constructeur
+        public frmAjouterPersonne(string entiteAAjouter) // Constructeur
         {
             InitializeComponent();
             Text = "Ajouter : " + entiteAAjouter;

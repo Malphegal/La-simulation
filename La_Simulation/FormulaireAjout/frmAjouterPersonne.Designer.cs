@@ -1,6 +1,6 @@
 ﻿namespace La_Simulation
 {
-    partial class frmAjouterEntite
+    partial class frmAjouterPersonne
     {
         /// <summary>
         /// Required designer variable.

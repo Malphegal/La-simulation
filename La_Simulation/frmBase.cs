@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using La_Simulation.Classes;
+using La_Simulation.FormulaireAjout;
 using System.Data.OleDb;
 
 namespace La_Simulation
@@ -40,7 +41,7 @@ namespace La_Simulation
                 OleDbDataReader dr = cmd.ExecuteReader();
 
                 while (dr.Read()) // On ajoute toutes les Personnes de la base dans le tableau static de Personne
-                    Personne.ajouterUnePersonne(dr.GetValue(1).ToString(), dr.GetValue(2).ToString(), byte.Parse(dr.GetValue(4).ToString()));
+                    Personne.ajouterUnePersonne(dr.GetValue(1).ToString(), dr.GetValue(2).ToString(), Convert.ToByte(dr.GetValue(4)), dr.GetValue(3).ToString() == "Homme" ? true : false);
 
                 connec.Close();
 
@@ -51,12 +52,14 @@ namespace La_Simulation
 
                 lblNombrePersonne.Tag = (int)cmd.ExecuteScalar();
                 lblNombrePersonne.Text = "Nombre de personnes : " + lblNombrePersonne.Tag.ToString();
+
+                connec.Close();
             }
         }
 
         private void btnAjouterPersonne_Click(object sender, EventArgs e) // Ajouter une Personne dans la base de donnée
         {
-            if (new frmAjouterPersonne("Personne").ShowDialog() == DialogResult.OK)
+            if (new frmAjouterPersonne().ShowDialog() == DialogResult.OK)
             {
                     lblNombrePersonne.Tag = int.Parse(lblNombrePersonne.Tag.ToString()) + 1; // Faire une fonction de mise à jour
                     lblNombrePersonne.Text = "Nombre de personnes : " + lblNombrePersonne.Tag.ToString(); // Faire une fonction de mise à jour
@@ -88,15 +91,18 @@ namespace La_Simulation
             {
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    using (var cmd = new OleDbCommand("DELETE FROM Personne WHERE id = " + frmListePersonne.idASupprimer, connec)) // ATTENTION 'OR 1 = 1'
+                    using (var cmd = new OleDbCommand("DELETE FROM Personne WHERE id = " + frm.idASupprimer, connec)) // ATTENTION 'OR 1 = 1'
                     {
                         connec.Open();
 
                         using (OleDbDataReader dr = cmd.ExecuteReader()) { }
                         Personne.nextIdMoinsUn(); // Retirer 1 à la valeur nextId de Personne
+                        Personne.supprimerPersonne(frm.idASupprimer); // Retirer la Personne de la liste de Personne
+
+                        connec.Close();
                     }
 
-                    using (var cmd = new OleDbCommand("UPDATE Personne SET id = id - 1 WHERE id > " + frmListePersonne.idASupprimer, connec)) // ATTENTION 'OR 1 = 1'
+                    using (var cmd = new OleDbCommand("UPDATE Personne SET id = id - 1 WHERE id > " + frm.idASupprimer, connec)) // ATTENTION 'OR 1 = 1'
                     {
                         connec.Open();
 
@@ -104,6 +110,8 @@ namespace La_Simulation
 
                         lblNombrePersonne.Tag = int.Parse(lblNombrePersonne.Tag.ToString()) - 1; // Faire une fonction de mise à jour
                         lblNombrePersonne.Text = "Nombre de personnes : " + lblNombrePersonne.Tag.ToString(); // Faire une fonction de mise à jour
+
+                        connec.Close();
                     }
                 }
             }
@@ -112,7 +120,7 @@ namespace La_Simulation
 
         private void btnAjouterPlanete_Click(object sender, EventArgs e) // Ajouter une Planete dans la base de donnée
         {
-            if (new frmAjouterPersonne("Planète").ShowDialog() == DialogResult.OK)
+            if (new frmAjouterPlanete().ShowDialog() == DialogResult.OK)
             {
                 lblNombrePlanete.Tag = int.Parse(lblNombrePlanete.Tag.ToString()) + 1; // Faire une fonction de mise à jour
                 lblNombrePlanete.Text = "Nombre de planètes : " + lblNombrePlanete.Tag.ToString(); // Faire une fonction de mise à jour

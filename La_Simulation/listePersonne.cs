@@ -16,7 +16,7 @@ namespace La_Simulation
             // Variables globales
 
         OleDbConnection connec = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\BaseDeDonnée\bdLaSimulation.mdb");
-        static public int idASupprimer { get; private set; }
+        public int idASupprimer { get; private set; }
 
             // Constructeur
 

@@ -20,10 +20,9 @@ namespace La_Simulation
 
             // Constructeurs
 
-        public frmAjouterPersonne(string entiteAAjouter) // Constructeur
+        public frmAjouterPersonne() // Constructeur
         {
             InitializeComponent();
-            Text = "Ajouter : " + entiteAAjouter;
         }
 
             // --------------------------
@@ -57,7 +56,7 @@ namespace La_Simulation
             }
             if (toutEstOK)
             {
-                Personne.ajouterUnePersonne(txtNom.Text, txtPrenom.Text, byte.Parse(txtAge.Text));
+                Personne.ajouterUnePersonne(txtNom.Text, txtPrenom.Text, byte.Parse(txtAge.Text), rdbHomme.Checked);
 
                     // Ajouter la Personne dans la table Personne
 
@@ -72,6 +71,8 @@ namespace La_Simulation
                     cmd.Parameters.Add("@AGE", OleDbType.Integer).Value = int.Parse(txtAge.Text);
 
                     cmd.ExecuteNonQuery();
+
+                    connec.Close();
                 }
 
                     // Ferme le formulaire

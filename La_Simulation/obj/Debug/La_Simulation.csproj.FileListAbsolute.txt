@@ -28,4 +28,5 @@ C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\obj\Debug\L
 C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\obj\Debug\La_Simulation.frmListePersonne.resources
 C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\obj\Debug\La_Simulation.Properties.Resources.resources
 C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\obj\Debug\La_Simulation.csproj.GenerateResource.Cache
-C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\obj\Debug\La_Simulation.frmAjouterEntite.resources
+C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\obj\Debug\La_Simulation.frmAjouterPersonne.resources
+C:\Users\gaëtan\Desktop\Proj_Simulation\La-simulation\La_Simulation\obj\Debug\La_Simulation.FormulaireAjout.frmAjouterPlanete.resources

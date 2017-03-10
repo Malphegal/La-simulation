@@ -16,7 +16,7 @@ namespace La_Simulation.Classes
 
         private static ushort nextId = 0; // à lire depuis un fichier de sauvegarde
 
-        public ushort id { get; } // id unique de la Personne
+        public ushort id { get; protected set; } // id unique de la Personne
         public string nom { get; } // nom de la Personne
         public string prenom { get; } // prenom de la Personne
         public bool sexe { get; } // sexe de la Personne
@@ -26,19 +26,20 @@ namespace La_Simulation.Classes
             // Constructeurs et création de Personne
             // --------------------------
 
-        public static void ajouterUnePersonne(string nom, string prenom, byte age) // Méthode public, pour la création d'une Personne
+        public static void ajouterUnePersonne(string nom, string prenom, byte age, bool sexe) // Méthode public, pour la création d'une Personne
         {
             if (string.IsNullOrWhiteSpace(nom) || string.IsNullOrWhiteSpace(prenom)) // Verif à faire à l'appel de la méthode ? -----
                 throw new ArgumentException();
-            listPersonne.Add(new Personne(nom, prenom, age));
+            listPersonne.Add(new Personne(nom, prenom, age, sexe));
         }
 
-        protected Personne(string Pnom, string Pprenom, byte Page) // Constructeur protected, pour l'héritage
+        protected Personne(string Pnom, string Pprenom, byte Page, bool Psexe) // Constructeur protected, pour l'héritage
         {
             id = getNextId();
             nom = Pnom;
             prenom = Pprenom;
             age = Page;
+            sexe = Psexe;
         }
 
             // --------------------------
@@ -79,6 +80,14 @@ namespace La_Simulation.Classes
         {
             return listPersonne.ToArray();
         }
+
+        public static void supprimerPersonne(int index)
+        {
+            foreach (Personne p in listPersonne)
+                if (p.id > index)
+                    p.id--;
+            listPersonne.RemoveAt(index);
+        }
     }
 
     class Test : Personne
@@ -93,14 +102,14 @@ namespace La_Simulation.Classes
             // Constructeurs et création de Test
             // --------------------------
 
-        public static void ajouterUnTest(string nom, string prenom, byte age, int aaaa) // Méthode public, pour la création d'un Test
+        public static void ajouterUnTest(string nom, string prenom, byte age, bool sexe, int aaaa) // Méthode public, pour la création d'un Test
         {
             if (string.IsNullOrWhiteSpace(nom) || string.IsNullOrWhiteSpace(prenom))
                 throw new ArgumentException();
-            listPersonne.Add(new Test(nom, prenom, age, aaaa));
+            listPersonne.Add(new Test(nom, prenom, age, sexe, aaaa));
         }
 
-        private Test(string nom, string prenom, byte age, int aaaa) : base(nom, prenom, age) // Constructeur private
+        private Test(string nom, string prenom, byte age, bool sexe, int aaaa) : base(nom, prenom, age, sexe) // Constructeur private
         {
             this.aaaa = aaaa;
         }

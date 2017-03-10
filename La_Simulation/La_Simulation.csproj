@@ -48,17 +48,23 @@
   <ItemGroup>
     <Compile Include="Classes\Personne.cs" />
     <Compile Include="Classes\Planete.cs" />
+    <Compile Include="FormulaireAjout\frmAjouterPlanete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulaireAjout\frmAjouterPlanete.Designer.cs">
+      <DependentUpon>frmAjouterPlanete.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBase.Designer.cs">
       <DependentUpon>frmBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAjouterEntite.cs">
+    <Compile Include="FormulaireAjout\frmAjouterPersonne.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAjouterEntite.Designer.cs">
-      <DependentUpon>frmAjouterEntite.cs</DependentUpon>
+    <Compile Include="FormulaireAjout\frmAjouterPersonne.Designer.cs">
+      <DependentUpon>frmAjouterPersonne.cs</DependentUpon>
     </Compile>
     <Compile Include="listePersonne.cs">
       <SubType>Form</SubType>
@@ -68,11 +74,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormulaireAjout\frmAjouterPlanete.resx">
+      <DependentUpon>frmAjouterPlanete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBase.resx">
       <DependentUpon>frmBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAjouterEntite.resx">
-      <DependentUpon>frmAjouterEntite.cs</DependentUpon>
+    <EmbeddedResource Include="FormulaireAjout\frmAjouterPersonne.resx">
+      <DependentUpon>frmAjouterPersonne.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="listePersonne.resx">
       <DependentUpon>listePersonne.cs</DependentUpon>

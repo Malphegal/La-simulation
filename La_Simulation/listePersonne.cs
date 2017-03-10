@@ -16,7 +16,6 @@ namespace La_Simulation
             // Variables globales
 
         OleDbConnection connec = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\BaseDeDonnée\bdLaSimulation.mdb");
-        OleDbCommand cmd;
         static public int idASupprimer { get; private set; }
 
             // Constructeur
@@ -32,17 +31,14 @@ namespace La_Simulation
 
         private void listePersonne_Load(object sender, EventArgs e)
         {
-            cmd = new OleDbCommand("SELECT * FROM Personne", connec);
-
-            connec.Open();
-
-            OleDbDataReader dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-                cboListePersonne.Items.Add("[" + dr.GetValue(0).ToString() + "] " + dr.GetValue(1).ToString() + " " + dr.GetValue(2).ToString() +
-                    "(" + dr.GetValue(3).ToString() + ") " + dr.GetValue(4).ToString() + (int.Parse(dr.GetValue(4).ToString()) > 1 ? " ans" : " an"));
-
-            connec.Close();
+            using (var cmd = new OleDbCommand("SELECT * FROM Personne", connec))
+            {
+                connec.Open();
+                OleDbDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                    cboListePersonne.Items.Add("[" + dr.GetValue(0).ToString() + "] " + dr.GetValue(1).ToString() + " " + dr.GetValue(2).ToString() +
+                        "(" + dr.GetValue(3).ToString() + ") " + dr.GetValue(4).ToString() + (int.Parse(dr.GetValue(4).ToString()) > 1 ? " ans" : " an"));
+            }
         } // Remplir cboListePersonne avec toutes les Personnes
 
         private void btnQuitter_Click(object sender, EventArgs e) // Ferme le formulaire de choix de Personne

@@ -55,10 +55,12 @@ namespace La_Simulation.Classes
             return "Je suis la planète " + nom + '.';
         }
 
-        public static IEnumerable<string> listerPlanetes() // Renvoie chaque string sePresenter de chaque Planete
+        public static string[] listerPlanetes() // Renvoie chaque string sePresenter de chaque Planete
         {
-            foreach (Planete p in listPlanete)
-                yield return p.sePresenter();
+            string[] res = new string[listPlanete.Count];
+            for (int i = 0; i < listPlanete.Count; i++)
+                res[i] = listPlanete[i].sePresenter();
+            return res;
         }
     }
 }

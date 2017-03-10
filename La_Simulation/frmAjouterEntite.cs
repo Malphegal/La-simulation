@@ -17,7 +17,6 @@ namespace La_Simulation
             // Variables globales
 
         OleDbConnection connec = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\..\BaseDeDonnée\bdLaSimulation.mdb");
-        OleDbCommand cmd;
 
             // Constructeurs
 
@@ -59,22 +58,21 @@ namespace La_Simulation
             if (toutEstOK)
             {
                 Personne.ajouterUnePersonne(txtNom.Text, txtPrenom.Text, byte.Parse(txtAge.Text));
-                
+
                     // Ajouter la Personne dans la table Personne
 
-                cmd = new OleDbCommand("INSERT INTO Personne VALUES (@ID, @NOM, @PRENOM, @SEXE, @AGE)", connec);
+                using (var cmd = new OleDbCommand("INSERT INTO Personne VALUES (@ID, @NOM, @PRENOM, @SEXE, @AGE)", connec))
+                {
+                    connec.Open();
 
-                connec.Open();
+                    cmd.Parameters.Add("@ID", OleDbType.Integer).Value = Personne.getAllPersonnes().Last().id;
+                    cmd.Parameters.Add("@NOM", OleDbType.VarChar).Value = txtNom.Text;
+                    cmd.Parameters.Add("@PRENOM", OleDbType.VarChar).Value = txtPrenom.Text;
+                    cmd.Parameters.Add("@SEXE", OleDbType.VarChar).Value = rdbHomme.Checked ? "Homme" : "Femme";
+                    cmd.Parameters.Add("@AGE", OleDbType.Integer).Value = int.Parse(txtAge.Text);
 
-                cmd.Parameters.Add("@ID", OleDbType.Integer).Value = Personne.getAllPersonnes().Last().id;
-                cmd.Parameters.Add("@NOM", OleDbType.VarChar).Value = txtNom.Text;
-                cmd.Parameters.Add("@PRENOM", OleDbType.VarChar).Value = txtPrenom.Text;
-                cmd.Parameters.Add("@SEXE", OleDbType.VarChar).Value = rdbHomme.Checked ? "Homme" : "Femme";
-                cmd.Parameters.Add("@AGE", OleDbType.Integer).Value = int.Parse(txtAge.Text);
-
-                cmd.ExecuteNonQuery();
-
-                connec.Close();
+                    cmd.ExecuteNonQuery();
+                }
 
                     // Ferme le formulaire
 

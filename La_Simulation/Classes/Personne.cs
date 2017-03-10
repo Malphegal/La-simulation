@@ -60,10 +60,12 @@ namespace La_Simulation.Classes
             return "Je suis " + nom + ' ' + prenom + " et j'ai " + age + (int.Parse(age.ToString()) > 1 ? " ans." : " an.");
         }
 
-        public static IEnumerable<string> listerPersonnes() // Renvoie chaque string sePresenter de chaque Personne
+        public static string[] listerPersonnes() // Renvoie chaque string sePresenter de chaque Personne
         {
-            foreach (Personne p in listPersonne)
-                yield return p.sePresenter();
+            string[] res = new string[listPersonne.Count];
+            for (int i = 0; i < listPersonne.Count; i++)
+                res[i] = listPersonne[i].sePresenter();
+            return res;
         }
 
         public static Personne getPersonne(ushort id) // Renvoie un objet de type Personne en fonction de l'id fournit en paramètre
